@@ -39,6 +39,7 @@ export const Timer = memo(function Timer({ className }: ControlsProps) {
         intervalRef.current = null;
         setStart(0);
         setNow(0);
+        setIsRunning(false);
     }, []);
     const formattedTime = useMemo(() => {
         const msPassed = start ? now - start : 0;

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { BtnStart, TimeLeft, Title, Wrapper } from './CountdownTimer.styles';
+import { BtnStart, TimeLeft, Title, Wrapper, WrapperRow } from './CountdownTimer.styles';
 import { StyledInput, TimerCard } from './CountdownTimer.styles';
-import { Button } from '@mui/material';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Slider from '@mui/material/Slider';
@@ -33,7 +32,7 @@ export function CountdownTimer() {
 
         if (minutes === 0 && seconds === 0) {
             setIsActive(false);
-            const audio = new Audio('/timer-bell_m1tycbno.mp3');
+            const audio = new Audio(process.env.PUBLIC_URL + '/timer-bell.mp3');
             audio.play();
             return;
         }
@@ -64,15 +63,17 @@ export function CountdownTimer() {
                 />
 
                 <BtnStart onClick={startTimer}>Старт</BtnStart>
-                <Box sx={{ width: 200 }}>
-                    <Stack>
-                        <Slider value={minutes} onChange={handleChangeMin} />
-                    </Stack>
-                    <Slider value={seconds} onChange={handleChangeSec} />
-                </Box>
-                <TimeLeft>
-                    Осталось: {minutes} мин {seconds} сек
-                </TimeLeft>
+                <WrapperRow>
+                    <Box sx={{ width: { xs: "100%", sm: 200 } }}>
+                        <Stack>
+                            <Slider value={minutes} onChange={handleChangeMin} />
+                        </Stack>
+                        <Slider value={seconds} onChange={handleChangeSec} />
+                    </Box>
+                    <TimeLeft>
+                        Осталось: {minutes} мин {seconds} сек
+                    </TimeLeft>
+                </WrapperRow>
             </TimerCard>
         </Wrapper>
     );

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Timer } from './components/Timer/Timer';
-import CountdownTimer from './components/Countdown/StateTextFields/CountdownTimer';
+import CountdownTimer from './components/Countdown/CountdownTimer';
 import { Title } from './index.styles';
 function App() {
     return (

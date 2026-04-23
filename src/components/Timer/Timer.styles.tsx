@@ -14,12 +14,17 @@ export const Wrapper = styled.div`
     padding-top: 10px;
     border-radius: 18px;
     height: 250px;
+    font-size: 40px;
+    @media (max-width: 768px) {
+        width: 100%;
+    }
 `;
 export const Title = styled.h1`
     margin: 0;
     padding: 0;
     color: #2f4f4f;
     font-size: 35px;
+    
 `;
 export const Time = styled.h2`
     font-size: 32px;
@@ -27,6 +32,9 @@ export const Time = styled.h2`
     padding: 0;
     color: #2f4f4f;
     font-size: 90px;
+    @media (max-width: 768px) {
+        font-size: 50px;
+    }
 `;
 
 export const BtnStart = styled.button`

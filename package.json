@@ -2,6 +2,7 @@
     "name": "my-app",
     "version": "0.1.0",
     "private": true,
+    "homepage": "https://ayvpavel.github.io/timer-countdown",
     "dependencies": {
         "@emotion/react": "^11.14.0",
         "@emotion/styled": "^11.14.1",
@@ -14,8 +15,7 @@
         "react-dom": "^19.2.4",
         "react-scripts": "5.0.1",
         "styled-components": "^6.3.12",
-        "typescript": "^4.9.5",
-        "homepage": "https://ayvpavel.github.io/timer-countdown"
+        "typescript": "^4.9.5"
     },
     "scripts": {
         "start": "react-scripts start",
@@ -24,7 +24,7 @@
         "eject": "react-scripts eject",
         "lint": "eslint ./src --ext .ts,.tsx",
         "lint:fix": "npm run lint -- --fix",
-        "predeploy": "npm run build"
+        "predeploy": "npm run build",
         "deploy": "gh-pages -d build"
     },
     "eslintConfig": {
