@@ -19,7 +19,6 @@ export const StyledInput = styled.input`
     }
 `;
 export const BtnStart = styled.button`
-    box-sizing: border-box;
     font-size: 20px;
     background: #1e90ff;
     color: #ffffff;
@@ -27,6 +26,17 @@ export const BtnStart = styled.button`
     height: 36px;
     width: 100px;
     border-radius: 5px;
+    border: none;
+`;
+export const BtnReset = styled.button`
+    font-size: 20px;
+    background: #1e90ff;
+    color: #ffffff;
+    cursor: pointer;
+    height: 36px;
+    width: 100px;
+    border-radius: 5px;
+    border: none;
 `;
 export const TimerCard = styled.div`
     padding: 30px;
@@ -51,7 +61,7 @@ export const Title = styled.h1`
     padding-top: 12px;
     text-align: center;
 `;
-export const TimeLeft = styled.h2`
+export const TimeLeftSyles = styled.h2`
     font-size: 35px;
     @media (max-width: 768px) {
         font-size: 30px;

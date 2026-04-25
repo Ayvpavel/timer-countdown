@@ -24,7 +24,6 @@ export const Title = styled.h1`
     padding: 0;
     color: #2f4f4f;
     font-size: 35px;
-    
 `;
 export const Time = styled.h2`
     font-size: 32px;
@@ -47,6 +46,7 @@ export const BtnStart = styled.button`
     width: 100px;
     margin-top: 20px;
     border-radius: 5px;
+    border: none;
 `;
 export const BtnReset = styled.button`
     margin: 0;
@@ -57,6 +57,7 @@ export const BtnReset = styled.button`
     margin-top: 20px;
     cursor: pointer;
     border-radius: 5px;
+    border: none;
 `;
 export const ButtonGroup = styled.div`
     display: flex;

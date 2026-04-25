@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { BtnStart, TimeLeft, Title, Wrapper, WrapperRow } from './CountdownTimer.styles';
+import { BtnReset, BtnStart, Title, Wrapper, WrapperRow } from './CountdownTimer.styles';
 import { StyledInput, TimerCard } from './CountdownTimer.styles';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Slider from '@mui/material/Slider';
+import { TimerInput } from './TimerImput';
+import { TimeLeft } from './TimeLeft';
 export function CountdownTimer() {
-    const [minutes, setMinutes] = useState<number>(0);
-    const [seconds, setSeconds] = useState<number>(0);
+    const [minutes, setMinutes] = useState(0);
+    const [seconds, setSeconds] = useState(0);
     const [isActive, setIsActive] = useState(false);
     const handleChangeMin = (_event: Event, newValue: number | number[]) => {
         setMinutes(newValue as number);
@@ -16,15 +18,6 @@ export function CountdownTimer() {
     };
     const startTimer = () => {
         setIsActive(true);
-    };
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        let value = Number(e.target.value);
-
-        if (value > 720) {
-            value = 720;
-        }
-
-        setMinutes(value);
     };
 
     useEffect(() => {
@@ -48,31 +41,27 @@ export function CountdownTimer() {
 
         return () => clearInterval(timerId);
     }, [minutes, seconds, isActive]);
-
+    const handleReset = () => {
+        setMinutes(0);
+        setSeconds(0);
+    };
     return (
         <Wrapper>
             <Title>Countdown</Title>
             <TimerCard>
-                <StyledInput type='number' placeholder='Минуты' value={minutes} onChange={handleChange} />
+                <TimerInput minutes={minutes} seconds={seconds} setMinutes={setMinutes} setSeconds={setSeconds} isActive = {isActive} />
 
-                <StyledInput
-                    type='number'
-                    placeholder='Секунды'
-                    value={seconds}
-                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSeconds(Number(e.target.value))}
-                />
-
-                <BtnStart onClick={startTimer}>Старт</BtnStart>
+                <BtnStart onClick={startTimer}>Start</BtnStart>
+                <BtnReset onClick={handleReset}>Reset</BtnReset>
                 <WrapperRow>
-                    <Box sx={{ width: { xs: "100%", sm: 200 } }}>
+                    <Box sx={{ width: { xs: '100%', sm: 200 } }}>
                         <Stack>
                             <Slider value={minutes} onChange={handleChangeMin} />
                         </Stack>
                         <Slider value={seconds} onChange={handleChangeSec} />
                     </Box>
-                    <TimeLeft>
-                        Осталось: {minutes} мин {seconds} сек
-                    </TimeLeft>
+
+                    <TimeLeft minutes={minutes} seconds={seconds} />
                 </WrapperRow>
             </TimerCard>
         </Wrapper>
