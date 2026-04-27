@@ -41,7 +41,6 @@ export const Timer = memo(function Timer({ className }: ControlsProps) {
     }, []);
     const formattedTime = useMemo(() => {
         const msPassed = start ? now - start : 0;
-        console.log(now, start, 'NOW<START');
         const minutes = Math.floor(msPassed / 60000);
         const seconds = Math.floor((msPassed % 60000) / 1000);
         const milliseconds = Math.floor((msPassed % 1000) / 10);
