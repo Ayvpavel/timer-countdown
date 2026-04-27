@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
         display-flex:
         flex-direction: row;
 
-    }
+}
 `;
 
 export const StyledInput = styled.input`
@@ -16,6 +16,9 @@ export const StyledInput = styled.input`
     @media (max-width: 768px) {
         width: 100%;
         margin-bottom: 10px;
+    }
+    @media (min-width: 768px) and (max-width: 992px) {
+        width: 100px;
     }
 `;
 export const BtnStart = styled.button`
@@ -37,6 +40,9 @@ export const BtnReset = styled.button`
     width: 100px;
     border-radius: 5px;
     border: none;
+    @media (max-width: 768px) {
+        margin-left: 12px;
+    }
 `;
 export const TimerCard = styled.div`
     padding: 30px;
@@ -52,10 +58,16 @@ export const TimerCard = styled.div`
         display: block;
         margin: 10px;
     }
+
 `;
 export const WrapperRow = styled.div`
     display: flex;
     flex-direction: column;
+    @media (min-width: 768px) and (max-width: 992px) {
+        display: flex;
+        flex-direction: row;
+        gap: 1px;
+    }
 `;
 export const Title = styled.h1`
     padding-top: 12px;

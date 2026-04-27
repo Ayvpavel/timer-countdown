@@ -17,6 +17,11 @@ export const Wrapper = styled.div`
     font-size: 40px;
     @media (max-width: 768px) {
         width: 100%;
+        margin: 10px auto;
+    }
+    @media (min-width: 768px) and (max-width: 992px) {
+        width: 100%;
+        margin: 10px auto;
     }
 `;
 export const Title = styled.h1`
@@ -46,7 +51,6 @@ export const BtnStart = styled.button`
     width: 100px;
     margin-top: 20px;
     border-radius: 5px;
-    border: none;
 `;
 export const BtnReset = styled.button`
     margin: 0;
@@ -57,7 +61,6 @@ export const BtnReset = styled.button`
     margin-top: 20px;
     cursor: pointer;
     border-radius: 5px;
-    border: none;
 `;
 export const ButtonGroup = styled.div`
     display: flex;
